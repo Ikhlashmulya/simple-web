@@ -25,6 +25,7 @@ func About(writer http.ResponseWriter, request *http.Request) {
     temp, err := template.ParseFiles("views/about.html", "views/layout.html")
     if err != nil {
         http.Error(writer, err.Error(), http.StatusInternalServerError)
+        return
     }
     
     temp.Execute(writer, nil)
@@ -34,6 +35,7 @@ func Contact(writer http.ResponseWriter, request *http.Request) {
     temp, err := template.ParseFiles("views/contact.html", "views/layout.html")
     if err != nil {
         http.Error(writer, err.Error(), http.StatusInternalServerError)
+        return
     }
     
     temp.Execute(writer, nil)
